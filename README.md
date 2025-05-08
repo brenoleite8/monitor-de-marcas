@@ -1,5 +1,5 @@
 # Monitor de Marcas
 
-Projeto Integrador do Curso Superior de Tecnologia da Informação - UFMS
+Projeto Integrador do Curso Superior de Tecnologia da Informação - UFMS, desenvolvido por Breno Leite Neto.
 
-## Desenvolvido por Breno Leite Neto
+## 
