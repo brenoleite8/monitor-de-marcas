@@ -1,0 +1,12 @@
+INSERT INTO system_group (id, name, uuid) VALUES( (SELECT max(g.id) + 1 FROM system_group g) , 'Material de Estudo', 'e313e6b9-d928-460f-8913-26e54ff74852');
+INSERT INTO system_user_group (id, system_group_id, system_user_id) VALUES((SELECT max(ug.id) + 1 FROM system_user_group ug), (SELECT max(g.id) FROM system_group g), 1);
+INSERT INTO system_program (id, name, controller) VALUES( (SELECT max(p.id) + 1 FROM system_program p) , 'Material de Estudo', 'TbMateriaisEstudoList');
+INSERT INTO system_group_program (id, system_group_id, system_program_id) VALUES( (SELECT max(gp.id) + 1 FROM system_group_program gp), (SELECT max(g.id) FROM system_group g) , (SELECT max(p.id) FROM system_program p where p.controller = 'TbMateriaisEstudoList'));
+INSERT INTO system_program (id, name, controller) VALUES( (SELECT max(p.id) + 1 FROM system_program p) , 'Cadastro de Material de Estudo', 'TbMateriaisEstudoForm');
+INSERT INTO system_group_program (id, system_group_id, system_program_id) VALUES( (SELECT max(gp.id) + 1 FROM system_group_program gp), (SELECT max(g.id) FROM system_group g) , (SELECT max(p.id) FROM system_program p where p.controller = 'TbMateriaisEstudoForm'));
+INSERT INTO system_program (id, name, controller) VALUES( (SELECT max(p.id) + 1 FROM system_program p) , 'Material de Estudo - Visualizar', 'TbMateriaisEstudoFormView');
+INSERT INTO system_group_program (id, system_group_id, system_program_id) VALUES( (SELECT max(gp.id) + 1 FROM system_group_program gp), (SELECT max(g.id) FROM system_group g) , (SELECT max(p.id) FROM system_program p where p.controller = 'TbMateriaisEstudoFormView'));
+INSERT INTO system_group (id, name, uuid) VALUES( (SELECT max(g.id) + 1 FROM system_group g) , 'Público', '0be0ae6b-1a3e-4994-b4c8-6636276e1a6c');
+INSERT INTO system_user_group (id, system_group_id, system_user_id) VALUES((SELECT max(ug.id) + 1 FROM system_user_group ug), (SELECT max(g.id) FROM system_group g), 1);
+INSERT INTO system_program (id, name, controller) VALUES( (SELECT max(p.id) + 1 FROM system_program p) , 'Formulário de Cadastro', 'CadastroPublicoForm');
+INSERT INTO system_group_program (id, system_group_id, system_program_id) VALUES( (SELECT max(gp.id) + 1 FROM system_group_program gp), (SELECT max(g.id) FROM system_group g) , (SELECT max(p.id) FROM system_program p where p.controller = 'CadastroPublicoForm'));
