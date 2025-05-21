@@ -119,8 +119,8 @@ class ComposerStaticInitc9c4554746f9331a3d1f3f9923e91a0d
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-            1 => __DIR__ . '/..' . '/doctrine/common/src',
+            0 => __DIR__ . '/..' . '/doctrine/common/src',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
         ),
         'DASPRiD\\Enum\\' => 
         array (

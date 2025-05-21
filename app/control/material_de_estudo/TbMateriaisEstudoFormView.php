@@ -86,11 +86,18 @@ class TbMateriaisEstudoFormView extends TPage
         }
 
         $btnTbMateriaisEstudoListOnShowAction = new TAction(['TbMateriaisEstudoList', 'onShow']);
-        $btnTbMateriaisEstudoListOnShowLabel = new TLabel("VOLTAR");
+        $btnTbMateriaisEstudoListOnShowLabel = new TLabel("Voltar");
 
         $btnTbMateriaisEstudoListOnShow = $this->form->addHeaderAction($btnTbMateriaisEstudoListOnShowLabel, $btnTbMateriaisEstudoListOnShowAction, 'far:arrow-alt-circle-left #3F51B5'); 
         $btnTbMateriaisEstudoListOnShowLabel->setFontSize('12px'); 
         $btnTbMateriaisEstudoListOnShowLabel->setFontColor('#333'); 
+
+        $btn_ondenunciarAction = new TAction([$this, 'onDenunciar'],['key'=>$tb_materiais_estudo->id]);
+        $btn_ondenunciarLabel = new TLabel("Denunciar");
+
+        $btn_ondenunciar = $this->form->addHeaderAction($btn_ondenunciarLabel, $btn_ondenunciarAction, 'fas:exclamation-circle #F44336'); 
+        $btn_ondenunciarLabel->setFontSize('12px'); 
+        $btn_ondenunciarLabel->setFontColor('#333'); 
 
         // vertical box container
         $container = new TVBox;
@@ -104,6 +111,34 @@ class TbMateriaisEstudoFormView extends TPage
 
         TTransaction::close();
         parent::add($container);
+
+    }
+
+    public static function onDenunciar($param = null) 
+    {
+        if(isset($param['confirmAction'])) {
+            try 
+            {
+                $user_id = 1; // id do usuário que receberá a notificação
+                @$notificationParam['key'] = $param['key'];
+                $icon = 'fas fa-check-circle';
+                SystemNotification::register( $user_id, 'Denúncia', 'Verifique o Material de Estudo de ID: '.$param['key'], new TAction(['TbMateriaisEstudoForm', 'onEdit'], $notificationParam), 'Verificar', $icon);
+                // Código gerado pelo snippet: "Mensagem Toast"
+                TToast::show("success", "Denúncia enviada com sucesso!", "topRight", "fas:check-circle");
+                // -----
+            }
+            catch (Exception $e) 
+            {
+                new TMessage('error', $e->getMessage());    
+            }
+        } else {
+            // define the delete action
+            $action = new TAction(array(__CLASS__, 'onDenunciar'));
+            $action->setParameters($param); // pass the key paramseter ahead
+            $action->setParameter('confirmAction', 1);
+            // shows a dialog to the user
+            new TQuestion('Deseja denunciar o conteúdo deste material?', $action);   
+        }
 
     }
 

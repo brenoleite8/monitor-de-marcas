@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu>
-  <menuitem label="Processos">
-    <icon>fas:file-alt fa-fw </icon>
-    <menu>  
-                </menu>
-  </menuitem>
-  <menuitem label="Público">
-    <icon>fas:users fa-fw </icon>
-    <menu>  
-                </menu>
-  </menuitem>
   <menuitem label="Material de Estudo">
     <icon>fas:book fa-fw </icon>
     <menu>
@@ -18,6 +8,20 @@
         <action>TbMateriaisEstudoList#method=onShow</action>
       </menuitem>
     </menu>
+  </menuitem>
+  <menuitem label="Processos">
+    <icon>fas:file-alt fa-fw </icon>
+    <menu>
+      <menuitem label="Processos">
+        <icon>fas:cogs fa-fw </icon>
+        <action>TbProcessoList#method=onShow</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="Público">
+    <icon>fas:users fa-fw </icon>
+    <menu>  
+                </menu>
   </menuitem>
   <menuitem label="_t{Administration}">
     <icon>fas:home fa-fw</icon>
