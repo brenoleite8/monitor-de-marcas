@@ -84,7 +84,9 @@ class VerificarInpiService
 
             $data = (string) $xml['data'];
 
-            $aTbProcesso = TbProcesso::getIndexedArray('num_protocolo', 'id');
+            // SE JÁ PESQUISOU NA DATA ATUAL, NÃO PESQUISA NOVAMENTE
+            $aTbProcesso = TbProcesso::where('data_ultimo_evento', '!=', TDate::date2us($data))
+                                     ->getIndexedArray('num_protocolo', 'id');
 
             // Itera pelos processos
             foreach ($xml->processo as $processo) {

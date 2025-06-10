@@ -1,88 +1,40 @@
-INSERT INTO system_group (id,name,uuid) VALUES (1,'Admin',null); 
+INSERT INTO system_group (id,name,uuid) VALUES (1,'Admin',''); 
 
-INSERT INTO system_group (id,name,uuid) VALUES (2,'Standard',null); 
+INSERT INTO system_group (id,name,uuid) VALUES (2,'Usuário',''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (1,1,1,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (1,1,1,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (2,1,2,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (2,1,2,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (3,1,3,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (3,1,3,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (4,1,4,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (4,1,4,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (5,1,5,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (5,1,5,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (6,1,6,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (6,1,6,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (7,1,8,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (7,1,8,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (8,1,9,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (8,1,9,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (9,1,11,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (9,1,11,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (10,1,14,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (10,1,14,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (11,1,15,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (11,1,15,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (12,2,10,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (12,2,10,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (13,2,12,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (13,2,12,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (14,2,13,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (14,2,13,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (15,2,16,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (15,2,19,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (16,2,17,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (16,2,20,''); 
 
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (17,2,18,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (18,2,19,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (19,2,20,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (20,1,21,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (21,2,22,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (22,2,23,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (23,2,24,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (24,2,25,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (25,1,26,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (26,1,27,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (27,1,28,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (28,1,29,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (29,2,30,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (30,1,31,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (31,1,32,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (32,1,33,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (33,1,34,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (34,1,35,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (35,1,36,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (36,1,37,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (37,1,38,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (38,1,39,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (39,1,40,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (40,1,41,null); 
-
-INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (41,1,42,null); 
+INSERT INTO system_group_program (id,system_group_id,system_program_id,actions) VALUES (17,2,30,''); 
 
 INSERT INTO system_program (id,name,controller,actions) VALUES (1,'System Group Form','SystemGroupForm',null); 
 

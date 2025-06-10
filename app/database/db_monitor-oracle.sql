@@ -133,6 +133,8 @@ CREATE TABLE tb_processo(
       id number(10)    NOT NULL , 
       num_protocolo varchar  (50)    NOT NULL , 
       data_ultimo_evento date   , 
+      comprovante_file_name varchar(3000)   , 
+      comprovante_content varchar(3000)   , 
       system_unit_id number(10)    NOT NULL , 
       system_user_id_create number(10)    NOT NULL , 
       system_user_id_update number(10)   , 

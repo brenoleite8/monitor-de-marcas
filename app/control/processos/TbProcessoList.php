@@ -47,7 +47,7 @@ class TbProcessoList extends TPage
         $data_ultimo_evento->setSize('100%');
 
         $row1 = $this->form->addFields([new TLabel("Número do Protocolo", null, '12px', 'B', '100%'),$num_protocolo],[new TLabel("Data do Último Evento", null, '12px', 'B', '100%'),$data_ultimo_evento],[new TLabel("Id", null, '12px', 'B', '100%'),$id]);
-        $row1->layout = ['col-sm-6',' col-sm-3 col-md-2',' col-sm-2 col-md-1'];
+        $row1->layout = ['col-sm-6',' col-sm-4 col-md-3',' col-sm-2 col-md-1'];
 
         // keep the form filled during navigation with session data
         $this->form->setData( TSession::getValue(__CLASS__.'_filter_data') );
@@ -58,9 +58,6 @@ class TbProcessoList extends TPage
 
         $btn_onshow = $this->form->addAction("Cadastrar", new TAction(['TbProcessoForm', 'onShow']), 'fas:plus #69aa46');
         $this->btn_onshow = $btn_onshow;
-
-        $btn_onaction = $this->form->addHeaderAction("Executar Busca", new TAction([$this, 'onAction']), 'far:circle #000000');
-        $this->btn_onaction = $btn_onaction;
 
         // creates a Datagrid
         $this->datagrid = new TDataGrid;
@@ -393,18 +390,6 @@ class TbProcessoList extends TPage
         catch (Exception $e) // in case of exception
         {
             new TMessage('error', $e->getMessage()); // shows the exception error message
-        }
-    }
-    public static function onAction($param = null) 
-    {
-        try 
-        {
-            VerificarInpiService::processar();
-
-        }
-        catch (Exception $e) 
-        {
-            new TMessage('error', $e->getMessage());    
         }
     }
 
