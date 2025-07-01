@@ -28,6 +28,8 @@ class TbProcesso extends TRecord
         parent::__construct($id, $callObjectLoad);
         parent::addAttribute('num_protocolo');
         parent::addAttribute('data_ultimo_evento');
+        parent::addAttribute('comprovante_file_name');
+        parent::addAttribute('comprovante_content');
         parent::addAttribute('system_unit_id');
         parent::addAttribute('system_user_id_create');
         parent::addAttribute('system_user_id_update');

@@ -13,7 +13,8 @@
     "pablodalloglio/fpdf": "dev-master",
     "pablodalloglio/phprtflite": "dev-master",
     "madbuild3r/pquery": "dev-master",
-    "mercadopago/dx-php": "2.6.1"
+    "phpcheckstyle/phpcheckstyle": "^0.14.8",
+    "phpunit/phpunit": "^12.2"
   },
   "config": {
     "preferred-install": {

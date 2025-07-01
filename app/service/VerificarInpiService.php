@@ -84,7 +84,9 @@ class VerificarInpiService
 
             $data = (string) $xml['data'];
 
-            $aTbProcesso = TbProcesso::getIndexedArray('num_protocolo', 'id');
+            // SE JÁ PESQUISOU NA DATA ATUAL, NÃO PESQUISA NOVAMENTE
+            $aTbProcesso = TbProcesso::where('data_ultimo_evento', '!=', TDate::date2us($data))
+                                     ->getIndexedArray('num_protocolo', 'id');
 
             // Itera pelos processos
             foreach ($xml->processo as $processo) {
@@ -119,11 +121,22 @@ class VerificarInpiService
                     $newTbProcessoEvento->num_revista    = $xml_file['numero_rpi'];
                     $newTbProcessoEvento->data_evento    = TDate::date2us($data);
                     $newTbProcessoEvento->texto_evento   = $texto_evento;
+                    $newTbProcessoEvento->notificado_sn  = 'N';
                     $newTbProcessoEvento->system_unit_id = $oTbProcesso->system_unit_id;
                     $newTbProcessoEvento->store();
 
                     $oTbProcesso->data_ultimo_evento     = TDate::date2us($data);
                     $oTbProcesso->store();
+
+                    // NOTIFICA O USUÁRIO
+                    NotificarUsuarioService::sendNotification();
+                    $notificado_email = NotificarUsuarioService::sendEmail();
+
+                    if($notificado_email == TRUE) {
+                        $newTbProcessoEvento->notificado_sn  = 'S';
+                        $newTbProcessoEvento->store();
+                    }
+                    
                 }
             }
             

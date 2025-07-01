@@ -62,7 +62,7 @@ class LoginForm extends TPage
         $login->style = 'height:35px; font-size:14px;float:left;border-bottom-left-radius: 0;border-top-left-radius: 0;';
         $password->style = 'height:35px;font-size:14px;float:left;border-bottom-left-radius: 0;border-top-left-radius: 0;';
         
-        $login->placeholder = _t('User');
+        $login->placeholder = 'E-mail';
         $password->placeholder = _t('Password');
         
         $login->autofocus = 'autofocus';

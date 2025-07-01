@@ -528,7 +528,7 @@ class TFieldList extends TTable
                     $clone->{'exitaction'} = "tfieldlist_update_sum('{$field_list_name}', '{$name}', 'callback')";
                     $clone->{'onBlur'}     = "tfieldlist_update_sum('{$field_list_name}', '{$name}', 'callback')";
                     
-                    $this->total_functions .= $field->{'exitaction'} . ';';
+                    $this->total_functions .= $clone->{'exitaction'} . ';';
                     
                     $value = isset($item->$name) ? $item->$name : 0;
                     
