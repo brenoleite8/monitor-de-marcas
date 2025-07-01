@@ -9,6 +9,7 @@ return array(
     'TPDFDesigner' => array($vendorDir . '/adianti/pdfdesigner'),
     'Spreadsheet' => array($vendorDir . '/pablodalloglio/spreadsheet_excel_writer'),
     'PHPRtfLite' => array($vendorDir . '/pablodalloglio/phprtflite/lib'),
+    'PHPCheckstyle\\' => array($vendorDir . '/phpcheckstyle/phpcheckstyle/src'),
     'OLE' => array($vendorDir . '/pablodalloglio/ole'),
     'FPDF' => array($vendorDir . '/pablodalloglio/fpdf'),
     'AdiantiPDFDesigner' => array($vendorDir . '/adianti/pdfdesigner'),

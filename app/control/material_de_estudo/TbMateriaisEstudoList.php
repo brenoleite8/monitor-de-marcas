@@ -34,6 +34,8 @@ class TbMateriaisEstudoList extends TPage
         $this->form->setFormTitle("Material de Estudo");
         $this->limit = 20;
 
+        $this->form->enableCSRFProtection();
+
         $titulo = new TEntry('titulo');
         $palavras_chave = new TEntry('palavras_chave');
 

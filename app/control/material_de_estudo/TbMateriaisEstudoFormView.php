@@ -26,6 +26,8 @@ class TbMateriaisEstudoFormView extends TPage
         $this->form = new BootstrapFormBuilder(self::$formName);
         $this->form->setTagName('div');
 
+        $this->form->enableCSRFProtection();
+
         $tb_materiais_estudo = new TbMateriaisEstudo($param['key']);
         // define the form title
         $this->form->setFormTitle(" ");

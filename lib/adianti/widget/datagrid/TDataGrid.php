@@ -1391,7 +1391,10 @@ class TDataGrid extends TTable
                         }
                     }
                     
-                    $cell->add($content);
+                    if(count($this->objectsGroup[$valueGroup]) > 0)
+                    {
+                        $cell->add($content);
+                    }
                 }
                 else
                 {
@@ -1524,7 +1527,7 @@ class TDataGrid extends TTable
                             $cell->{'data-total-form-field'} = $totalFormField;
                         }
                     }
-                    if($raw_content)
+                    if(count($this->objects))
                     {
                         $cell->add($content);
                     }
@@ -1700,6 +1703,11 @@ class TDataGrid extends TTable
                 // var_dump($column->isHidden());
             }
         }
+    }
+
+    public function initPopoverHeaderFilters()
+    {
+        TScript::create("tdatagrid_init_header_popover_filters('{$this->id}');");
     }
     
     /**

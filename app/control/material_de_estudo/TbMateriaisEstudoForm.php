@@ -29,6 +29,7 @@ class TbMateriaisEstudoForm extends TPage
         // define the form title
         $this->form->setFormTitle("Cadastro de Material de Estudo");
 
+        $this->form->enableCSRFProtection();
 
         $titulo = new TEntry('titulo');
         $id = new THidden('id');
@@ -122,7 +123,10 @@ class TbMateriaisEstudoForm extends TPage
             $data = $this->form->getData(); // get form data as array
             $object->fromArray( (array) $data); // load the object with data
 
-            $imagem_dir = 'app/images'; 
+            if(!empty($object->link_video))
+                $object->link_video = self::embedYoutube($object->link_video);
+
+            $imagem_dir = 'app/images';  
 
             $object->store(); // save the object 
 
@@ -198,6 +202,26 @@ class TbMateriaisEstudoForm extends TPage
     public static function getFormName()
     {
         return self::$formName;
+    }
+
+    public static function embedYoutube($param = null) 
+    {
+        try 
+        {
+            // Expressão regular para extrair o ID do vídeo
+            $pattern = '/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/';
+
+            if (preg_match($pattern, $param, $matches)) {
+                $videoId = $matches[1];
+                return "https://www.youtube.com/embed/" . $videoId;
+            } else {
+                throw new Exception('Link do YouTube Inválido!');
+            }
+        }
+        catch (Exception $e) 
+        {
+            throw $e;
+        }
     }
 
 }
